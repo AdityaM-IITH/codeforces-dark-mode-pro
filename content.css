@@ -121,16 +121,18 @@ p, ul, ol, li, dl, dt, dd, blockquote, center, div {
   color: var(--text-primary) !important;
 }
 
-font, [style*="color: black"], [style*="color:#000"], [style*="color: #000"] {
-  color: var(--text-primary) !important;
-}
 
 b, strong {
   color: var(--text-heading) !important;
 }
 
-h1, h2, h3, h4, h5, h6, .title, 
-#pageContent h1, #pageContent h2, #pageContent h3, #pageContent h4, #pageContent h5, #pageContent h6, #pageContent .title {
+h1, h2, h3, h4, h5, h6, .title, .topic-title, .article-title, .caption,
+#pageContent h1, #pageContent h2, #pageContent h3, #pageContent h4, #pageContent h5, #pageContent h6, #pageContent .title,
+.info .title, .userbox .title, .title-photo .title {
+  color: var(--text-heading) !important;
+}
+
+font, [style*="color: black"], [style*="color: #000"], [style*="color:#000"], [style*="color: #000000"], [color="black"], [color="#000000"], [color="#000"] {
   color: var(--text-heading) !important;
 }
 
@@ -207,8 +209,14 @@ a:hover, a:active {
   color: var(--text-heading) !important;
 }
 
-.second-level-menu-list li, .nav-links li, .second-level-menu-list li.current, .nav-links li.current {
+.menu-list-container ul li, .menu-list-container ul li.current,
+.second-level-menu ul li, .second-level-menu ul li.current,
+.second-level-menu-list li, .second-level-menu-list li.current,
+.nav-links li, .nav-links li.current,
+.profile-links li, .profile-links li.current,
+.personal-sidebar li, .personal-sidebar li.current {
   background: transparent !important;
+  background-image: none !important;
   border: none !important;
 }
 
@@ -431,10 +439,12 @@ a.user-violet, a.user-violet:link, a.user-violet:visited, .user-violet { color: 
 a.user-orange, a.user-orange:link, a.user-orange:visited, .user-orange { color: var(--rating-master) !important; }
 a.user-red, a.user-red:link, a.user-red:visited, .user-red { color: var(--rating-gm) !important; }
 a.user-legendary, a.user-legendary:link, a.user-legendary:visited, .user-legendary { color: var(--rating-lgm) !important; }
+a.user-tourist, a.user-tourist:link, a.user-tourist:visited, .user-tourist { color: #ffffff !important; }
 a.user-admin, a.user-admin:link, a.user-admin:visited, .user-admin { color: var(--rating-unrated) !important; }
 a.user-black, a.user-black:link, a.user-black:visited, .user-black { color: var(--rating-unrated) !important; }
 
 .user-legendary::first-letter, .legendary-user-first-letter, a.user-legendary::first-letter, a.user-legendary:visited::first-letter { color: #ffffff !important; }
+.user-tourist::first-letter, .tourist-user-first-letter, a.user-tourist::first-letter, a.user-tourist:visited::first-letter { color: var(--rating-lgm) !important; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
