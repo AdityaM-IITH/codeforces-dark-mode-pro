@@ -1,0 +1,438 @@
+/* Codeforces Dark Mode - Pure Color Edition (v6.1) */
+
+:root {
+  /* Soft Dark Theme (Zinc) - High readability, zero eye strain */
+  --bg-main: #18181b;         
+  --bg-surface-1: #27272a;    
+  --bg-surface-2: #3f3f46;    
+  --bg-surface-hover: #3f3f46;
+  --bg-surface-alt: rgba(255, 255, 255, 0.03);
+  
+  --border-color: #3f3f46;
+  
+  /* Text Hierarchy */
+  --text-heading: #f4f4f5;    
+  --text-primary: #e4e4e7;    
+  --text-secondary: #a1a1aa;  
+  --text-muted: #71717a;      
+  
+  /* Classic CF Blue Adapted for Dark Mode */
+  --link-color: #3b82f6;      
+  --link-hover: #60a5fa;
+  --accent-color: #3b82f6;
+  
+  /* User-Selected Rating Colors */
+  --rating-unrated: #ffffff;
+  --rating-newbie: #8c8c8c;   
+  --rating-pupil: #00c700;    
+  --rating-specialist: #01bdb2; 
+  --rating-expert: #757dff;   
+  --rating-cm: #ce8aff;       
+  --rating-master: #ff8c00;   
+  --rating-gm: #ff4747;       
+  --rating-lgm: #ff4747;      
+}
+
+::selection { background: rgba(59, 130, 246, 0.3) !important; color: #ffffff !important; }
+::-moz-selection { background: rgba(59, 130, 246, 0.3) !important; color: #ffffff !important; }
+
+body, html {
+  background: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+}
+
+div, span, table, tbody, thead, tr, th, td, pre, fieldset, form {
+  border-color: var(--border-color) !important;
+}
+
+/* ==========================================================================
+   KILL INLINE WHITE BACKGROUNDS
+   ========================================================================== */
+[style*="background-color: white"], [style*="background-color: #fff"], [style*="background-color: #ffffff"],
+[style*="background: white"], [style*="background: #fff"], [style*="background: #ffffff"],
+.rtable td.left[style] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   SMART IMAGE INVERSION & FLAWLESS LOGO BLENDING
+   ========================================================================== */
+#header .title-photo img, img[src*="codeforces"], img[src*="sponsor"] {
+  filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
+  mix-blend-mode: screen !important; 
+}
+
+img[src*="tex"], .problem-statement img {
+  filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
+}
+
+img[src*="star"], img[src*="icon"], img[src*="16x16"], img[src*="24x24"], 
+img[src*="yes"], img[src*="no"], img[src*="accept"], img[src*="reject"], 
+.avatar img, img[src*="userphoto"], img[src*="user"], img[src*="medal"], .photo img,
+img[src*="flag"], .lang-chooser img {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+img[src*="star_empty"] {
+  filter: brightness(0.85) !important;
+}
+
+/* Empty profile pictures */
+img[src*="no-avatar"] {
+  filter: invert(1) brightness(1.5) !important;
+  mix-blend-mode: screen !important;
+}
+
+/* Force Bell inversion (placed here to override 'icon' or '16x16' rules) */
+img[src*="bell"] {
+  filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
+  mix-blend-mode: screen !important;
+}
+
+/* ==========================================================================
+   THE ULTIMATE MATH FIX
+   ========================================================================== */
+.tex-span, .MathJax_Display, .MathJax, .mjx-chtml, .MathJax_SVG, mjx-container,
+.tex-span *, .MathJax_Display *, .MathJax *, .mjx-chtml *, .MathJax_SVG *, mjx-container * {
+  color: var(--text-primary) !important;
+  fill: var(--text-primary) !important;
+  border-color: var(--text-primary) !important; 
+  background: transparent !important;
+}
+
+img.tex-formula {
+  filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2) !important;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY NORMALIZER (Colors only)
+   ========================================================================== */
+p, ul, ol, li, dl, dt, dd, blockquote, center, div {
+  color: var(--text-primary) !important;
+}
+
+.ttypography p, .ttypography ul, .ttypography ol, .ttypography li, .ttypography blockquote {
+  color: var(--text-primary) !important;
+}
+
+font, [style*="color: black"], [style*="color:#000"], [style*="color: #000"] {
+  color: var(--text-primary) !important;
+}
+
+b, strong {
+  color: var(--text-heading) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+  color: var(--text-heading) !important;
+}
+
+a, a:link, a:visited {
+  color: var(--link-color) !important;
+  transition: color 0.15s ease !important;
+}
+a:hover, a:active {
+  color: var(--link-hover) !important;
+}
+
+.datatable .notice {
+  color: var(--text-secondary) !important;
+}
+
+/* ==========================================================================
+   PANELS & BOXES
+   ========================================================================== */
+#pageContent { background: transparent !important; }
+
+.roundbox {
+  background: var(--bg-surface-1) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+}
+
+.roundbox .titled, .roundbox .caption {
+  background: var(--bg-surface-2) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  border-top: none !important;
+  color: var(--text-heading) !important;
+}
+
+.roundbox .bottom-links {
+  background: var(--bg-surface-2) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.roundbox table { background: transparent !important; }
+
+#header {
+  background: var(--bg-surface-1) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+}
+
+.tag-box {
+  border: 1px solid var(--border-color) !important;
+  background: var(--bg-surface-2) !important;
+  color: var(--text-primary) !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+.tag-box:hover {
+  background: var(--bg-surface-hover) !important;
+  border-color: var(--link-color) !important;
+}
+
+/* ==========================================================================
+   MENUS & TABS (Fixed Background Bleed)
+   ========================================================================== */
+.menu-box {
+  background: var(--bg-surface-1) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+}
+
+.menu-list-container ul { background: transparent !important; }
+.menu-list-container ul li a {
+  color: var(--text-primary) !important;
+}
+.menu-list-container ul li.current a, .menu-list-container ul li a:hover {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-heading) !important;
+}
+
+.second-level-menu-list li, .nav-links li {
+  background: transparent !important;
+  border: none !important;
+}
+
+.second-level-menu-list li a, .nav-links li a {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.15s ease !important;
+}
+
+/* FIXED: Changed background-color to background to nuke CF gradients/images */
+.second-level-menu-list li.current a, .nav-links li.current a {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-heading) !important;
+  border-bottom: 2px solid var(--accent-color) !important;
+}
+
+.second-level-menu-list li a:hover, .nav-links li a:hover {
+  background: var(--bg-surface-hover) !important;
+  color: var(--text-heading) !important;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+.datatable, .standings, .rtable {
+  background: var(--bg-surface-1) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+}
+.datatable th, .standings th, .rtable th {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+.datatable td, .standings td, .rtable td {
+  border-bottom: 1px solid var(--border-color) !important;
+  border-right: none !important; 
+  border-left: none !important;
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+.datatable tr:nth-child(even) td, .standings tr:nth-child(even) td, .datatable tr.dark td {
+  background: var(--bg-surface-alt) !important;
+}
+.datatable tr:hover td, .standings tr:hover td {
+  background: var(--bg-surface-hover) !important;
+}
+
+.accepted-special, .party-accepted, .cell-accepted {
+  background: var(--bg-success) !important;
+  color: var(--text-success) !important;
+}
+.rejected-special, .party-rejected, .cell-rejected {
+  background: var(--bg-danger) !important;
+  color: var(--text-danger) !important;
+}
+
+/* ==========================================================================
+   PROBLEM STATEMENTS & SAMPLE TESTS
+   ========================================================================== */
+.problem-statement .time-limit,
+.problem-statement .memory-limit,
+.problem-statement .input-file,
+.problem-statement .output-file {
+  color: var(--text-secondary) !important;
+}
+.problem-statement .property-title {
+  color: var(--text-primary) !important;
+}
+
+.problem-statement .sample-test {
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+}
+.problem-statement .sample-test .input,
+.problem-statement .sample-test .output { border: none !important; }
+.problem-statement .sample-test .title {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-heading) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.problem-statement .sample-test pre {
+  background: var(--bg-surface-1) !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+}
+
+.problem-statement .sample-test pre > div, .problem-statement .sample-test pre > span,
+.test-example-line, .test-example-line-even, .test-example-line-odd {
+  background: transparent !important; 
+}
+
+.problem-statement .sample-test pre div:nth-child(even), .test-example-line-even {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.sample-test .title .input-output-copier {
+  background: var(--bg-main) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-secondary) !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+.sample-test .title .input-output-copier:hover {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-heading) !important;
+  border-color: var(--text-primary) !important;
+}
+
+/* ==========================================================================
+   CODE BLOCKS
+   ========================================================================== */
+.ttypography tt, .ttypography code, tt, code, .tt {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--link-hover) !important; 
+  border-radius: 4px !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.prettyprint {
+  background: #1e2227 !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+}
+.prettyprint .pln, .prettyprint .pun { color: #abb2bf !important; }
+.prettyprint .str, .prettyprint .atv { color: #98c379 !important; }
+.prettyprint .kwd, .prettyprint .dec { color: #c678dd !important; }
+.prettyprint .com { color: #5c6370 !important; }
+.prettyprint .typ { color: #e5c07b !important; }
+.prettyprint .lit, .prettyprint .atn { color: #d19a66 !important; }
+.prettyprint .tag { color: #e06c75 !important; }
+
+/* ==========================================================================
+   BUTTONS & FORMS
+   ========================================================================== */
+input[type="file"] {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+  padding: 0 !important;
+}
+input[type="file"]::file-selector-button {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  margin-right: 10px !important;
+}
+input[type="file"]::file-selector-button:hover {
+  background: var(--link-color) !important;
+  color: #0b0f16 !important; 
+  border-color: var(--link-color) !important;
+}
+
+input[type="submit"], button, .btn {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+input[type="submit"]:hover, button:hover, .btn:hover {
+  background: var(--link-color) !important;
+  color: #0b0f16 !important; 
+  border-color: var(--link-color) !important;
+}
+
+input.search, .search-box input, input[type="text"], input[type="password"], textarea, select {
+  background: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+}
+input.search:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  border-color: var(--accent-color) !important;
+  outline: none !important;
+}
+
+/* ==========================================================================
+   PAGINATION, TOASTS & MODALS (Restored)
+   ========================================================================== */
+.pagination { background: transparent !important; }
+.pagination .page-index.current, .pagination .page-index.current a { 
+  background: var(--bg-surface-2) !important; 
+  color: var(--text-heading) !important; 
+  border-color: var(--border-color) !important; 
+}
+.pagination a { 
+  border-color: var(--border-color) !important; 
+  color: var(--text-primary) !important;
+  background: var(--bg-surface-1) !important;
+}
+.pagination a:hover { 
+  background: var(--bg-surface-hover) !important; 
+  color: var(--text-heading) !important;
+}
+
+.jGrowl-notification, .mac-window, .popup, .facebox-popup, .spoiler-content {
+  background: var(--bg-surface-1) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px !important;
+}
+
+/* ==========================================================================
+   RATING COLORS
+   ========================================================================== */
+a.user-gray, a.user-gray:link, a.user-gray:visited, .user-gray { color: var(--rating-newbie) !important; }
+a.user-green, a.user-green:link, a.user-green:visited, .user-green { color: var(--rating-pupil) !important; }
+a.user-cyan, a.user-cyan:link, a.user-cyan:visited, .user-cyan { color: var(--rating-specialist) !important; }
+a.user-blue, a.user-blue:link, a.user-blue:visited, .user-blue { color: var(--rating-expert) !important; }
+a.user-violet, a.user-violet:link, a.user-violet:visited, .user-violet { color: var(--rating-cm) !important; }
+a.user-orange, a.user-orange:link, a.user-orange:visited, .user-orange { color: var(--rating-master) !important; }
+a.user-red, a.user-red:link, a.user-red:visited, .user-red { color: var(--rating-gm) !important; }
+a.user-legendary, a.user-legendary:link, a.user-legendary:visited, .user-legendary { color: var(--rating-lgm) !important; }
+a.user-admin, a.user-admin:link, a.user-admin:visited, .user-admin { color: var(--rating-unrated) !important; }
+a.user-black, a.user-black:link, a.user-black:visited, .user-black { color: var(--rating-unrated) !important; }
+
+.user-legendary::first-letter, .legendary-user-first-letter, a.user-legendary::first-letter, a.user-legendary:visited::first-letter { color: #ffffff !important; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bg-surface-hover); }
