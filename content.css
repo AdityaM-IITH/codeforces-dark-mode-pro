@@ -185,7 +185,7 @@ a:hover, a:active {
   border-top: 1px solid var(--border-color) !important;
 }
 
-.roundbox table { background: transparent !important; }
+.roundbox table, .roundbox td, .roundbox th { background: transparent !important; }
 
 #header {
   background: var(--bg-surface-1) !important;
