@@ -11,9 +11,8 @@ I wanted something that feels premium, native, and actually reduces eye strain. 
 - **Smart Image Inversion**: Banners, logos, and empty avatars blend seamlessly into the background instead of looking like giant white boxes. 
 
 ### Screenshots
-*(Upload your screenshots here!)*
-![Problemset Example](screenshot_1.png)
-![Profile Example](screenshot_2.png)
+![Problemset Example](imgs/screenshot_1.png)
+![Profile Example](imgs/screenshot_2.png)
 
 ### How to Install (Unpacked)
 You can load this directly into your browser in a few clicks:
