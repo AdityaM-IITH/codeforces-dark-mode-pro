@@ -1,4 +1,10 @@
-/* Codeforces Dark Mode - Pure Color Edition (v6.1) */
+/**
+ * Codeforces Dark Mode Pro
+ * Copyright (c) 2026 AdityaM-IITH
+ * 
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 :root {
   /* Soft Dark Theme (Zinc) - High readability, zero eye strain */
@@ -79,13 +85,11 @@ img[src*="star_empty"] {
   filter: brightness(0.85) !important;
 }
 
-/* Empty profile pictures */
 img[src*="no-avatar"] {
   filter: invert(1) brightness(1.5) !important;
   mix-blend-mode: screen !important;
 }
 
-/* Force Bell inversion (placed here to override 'icon' or '16x16' rules) */
 img[src*="bell"] {
   filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
   mix-blend-mode: screen !important;
@@ -214,7 +218,6 @@ a:hover, a:active {
   transition: all 0.15s ease !important;
 }
 
-/* FIXED: Changed background-color to background to nuke CF gradients/images */
 .second-level-menu-list li.current a, .nav-links li.current a {
   background: var(--bg-surface-2) !important;
   color: var(--text-heading) !important;
