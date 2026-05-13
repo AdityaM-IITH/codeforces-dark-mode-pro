@@ -129,7 +129,8 @@ b, strong {
   color: var(--text-heading) !important;
 }
 
-h1, h2, h3, h4, h5, h6, .title {
+h1, h2, h3, h4, h5, h6, .title, 
+#pageContent h1, #pageContent h2, #pageContent h3, #pageContent h4, #pageContent h5, #pageContent h6, #pageContent .title {
   color: var(--text-heading) !important;
 }
 
@@ -206,7 +207,7 @@ a:hover, a:active {
   color: var(--text-heading) !important;
 }
 
-.second-level-menu-list li, .nav-links li {
+.second-level-menu-list li, .nav-links li, .second-level-menu-list li.current, .nav-links li.current {
   background: transparent !important;
   border: none !important;
 }
