@@ -6,33 +6,48 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    const elementsWithBg = document.querySelectorAll('[style*="background"]');
-    elementsWithBg.forEach(el => {
-        const bg = el.style.backgroundColor;
-        if (bg === 'white' || bg === '#ffffff' || bg === 'rgb(255, 255, 255)' || bg === '#f8f8f8') {
-            el.style.backgroundColor = '';
+const fixDynamicStyles = () => {
+    // Fix blog titles that Codeforces forces to black via JS
+    const blogTitles = document.querySelectorAll('h3 a[href^="/blog/"], h2 a[href^="/blog/"], .title a[href^="/blog/"]');
+    blogTitles.forEach(el => {
+        el.style.setProperty('color', 'var(--text-heading)', 'important');
+    });
+
+    // Kill inline white/light backgrounds
+    const elementsWithStyle = document.querySelectorAll('[style*="background"]');
+    elementsWithStyle.forEach(el => {
+        const bg = el.style.backgroundColor.toLowerCase();
+        if (bg.includes('white') || bg.includes('fff') || bg.includes('255, 255, 255') || bg.includes('f8f8f8')) {
+            el.style.setProperty('background-color', 'transparent', 'important');
         }
     });
+};
 
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.addedNodes.length) {
-                mutation.addedNodes.forEach((node) => {
-                    if (node.nodeType === 1) { 
-                        if (node.style && node.style.backgroundColor) {
-                            const bg = node.style.backgroundColor;
-                            if (bg === 'white' || bg === '#ffffff' || bg === 'rgb(255, 255, 255)') {
-                                node.style.backgroundColor = '';
-                            }
-                        }
-                    }
-                });
-            }
-        });
-    });
+// Initial run
+fixDynamicStyles();
 
-    observer.observe(document.body, { childList: true, subtree: true });
+// Observe for dynamic changes (AJAX, Codeforces scripts)
+const observer = new MutationObserver((mutations) => {
+    let shouldFix = false;
+    for (const mutation of mutations) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            shouldFix = true;
+            break;
+        }
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            shouldFix = true;
+            break;
+        }
+    }
+    if (shouldFix) fixDynamicStyles();
+});
+
+observer.observe(document.body, { 
+    childList: true, 
+    subtree: true, 
+    attributes: true, 
+    attributeFilter: ['style'] 
 });
 
 document.documentElement.setAttribute('data-theme', 'dark');
+
