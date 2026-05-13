@@ -57,8 +57,10 @@ div, span, table, tbody, thead, tr, th, td, pre, fieldset, form {
 [style*="background-color: white"], [style*="background-color: #fff"], [style*="background-color: #ffffff"],
 [style*="background: white"], [style*="background: #fff"], [style*="background: #ffffff"],
 [style*="background-color: #ebf6ff"], [style*="background-color: #f0f7fb"], [style*="background-color: #e4f4ff"], 
+[style*="background-color: #e0f0ff"], [style*="background-color: #f0f8ff"],
 [style*="background-color: #d4edc9"], [style*="background-color: #ffdddd"], [style*="background-color: #ffcccc"],
 [style*="background: #ebf6ff"], [style*="background: #f0f7fb"], [style*="background: #e4f4ff"], 
+[style*="background: #e0f0ff"], [style*="background: #f0f8ff"],
 [style*="background: #d4edc9"], [style*="background: #ffdddd"], [style*="background: #ffcccc"],
 .rtable td.left[style] {
   background-color: transparent !important;
@@ -185,7 +187,10 @@ a:hover, a:active {
   border-top: 1px solid var(--border-color) !important;
 }
 
-.roundbox table, .roundbox td, .roundbox th { background: transparent !important; }
+.roundbox table, .roundbox td, .roundbox th, .roundbox div:not(.titled):not(.caption) { 
+  background: transparent !important; 
+  background-color: transparent !important;
+}
 
 #header {
   background: var(--bg-surface-1) !important;
