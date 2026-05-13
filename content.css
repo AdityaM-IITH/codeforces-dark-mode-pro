@@ -146,7 +146,7 @@ font, [style*="color: black"], [style*="color:black"], [style*="color: #000"], [
   color: var(--text-heading) !important;
 }
 
-a[href^="/blog/"][style*="color:black"] {
+h1 a[href^="/blog/"], h2 a[href^="/blog/"], h3 a[href^="/blog/"], .title a[href^="/blog/"] {
   color: var(--text-heading) !important;
 }
 
