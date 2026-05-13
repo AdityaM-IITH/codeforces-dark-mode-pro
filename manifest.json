@@ -3,6 +3,11 @@
   "name": "Codeforces Dark Mode Pro",
   "version": "1.0.0",
   "description": "A premium, UI/UX optimized dark mode for Codeforces with smart image inversion and preserved rating colors.",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "content_scripts": [
     {
       "matches": ["*://codeforces.com/*", "*://*.codeforces.com/*"],
