@@ -64,7 +64,7 @@ div, span, table, tbody, thead, tr, th, td, pre, fieldset, form {
 /* ==========================================================================
    SMART IMAGE INVERSION & FLAWLESS LOGO BLENDING
    ========================================================================== */
-#header .title-photo img, img[src*="codeforces"], img[src*="sponsor"] {
+#header .title-photo img, img[src*="codeforces"], img[src*="sponsor"], .title img, img[src*="title"] {
   filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
   mix-blend-mode: screen !important; 
 }
