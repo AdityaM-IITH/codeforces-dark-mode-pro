@@ -56,15 +56,25 @@ div, span, table, tbody, thead, tr, th, td, pre, fieldset, form {
    ========================================================================== */
 [style*="background-color: white"], [style*="background-color: #fff"], [style*="background-color: #ffffff"],
 [style*="background: white"], [style*="background: #fff"], [style*="background: #ffffff"],
+[style*="background-color: #ebf6ff"], [style*="background-color: #f0f7fb"], [style*="background-color: #e4f4ff"], 
+[style*="background-color: #d4edc9"], [style*="background-color: #ffdddd"], [style*="background-color: #ffcccc"],
+[style*="background: #ebf6ff"], [style*="background: #f0f7fb"], [style*="background: #e4f4ff"], 
+[style*="background: #d4edc9"], [style*="background: #ffdddd"], [style*="background: #ffcccc"],
 .rtable td.left[style] {
   background-color: transparent !important;
   background: transparent !important;
 }
 
+.notice, .ttypography .notice, .alert, .info, .success, .warning, .error {
+  background: var(--bg-surface-1) !important;
+  background-color: var(--bg-surface-1) !important;
+  border-color: var(--border-color) !important;
+}
+
 /* ==========================================================================
    SMART IMAGE INVERSION & FLAWLESS LOGO BLENDING
    ========================================================================== */
-#header .title-photo img, img[src*="codeforces"], img[src*="sponsor"], .title img, img[src*="title"] {
+#header .title-photo img, img[src*="codeforces"], img[src*="sponsor"], .title img, img[src*="title"], img.title, img[class*="title"], .topic-title img, .article-title img, h1 img, h2 img, h3 img {
   filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
   mix-blend-mode: screen !important; 
 }
@@ -132,7 +142,11 @@ h1, h2, h3, h4, h5, h6, .title, .topic-title, .article-title, .caption,
   color: var(--text-heading) !important;
 }
 
-font, [style*="color: black"], [style*="color: #000"], [style*="color:#000"], [style*="color: #000000"], [color="black"], [color="#000000"], [color="#000"] {
+font, [style*="color: black"], [style*="color:black"], [style*="color: #000"], [style*="color:#000"], [style*="color: #000000"], [color="black"], [color="#000000"], [color="#000"], [style*="rgb(0, 0, 0)"], [style*="rgb(0,0,0)"] {
+  color: var(--text-heading) !important;
+}
+
+a[href^="/blog/"][style*="color:black"] {
   color: var(--text-heading) !important;
 }
 
@@ -196,11 +210,15 @@ a:hover, a:active {
    ========================================================================== */
 .menu-box {
   background: var(--bg-surface-1) !important;
+  background-image: none !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 6px !important;
 }
 
-.menu-list-container ul { background: transparent !important; }
+.menu-list-container, .menu-list-container ul { 
+  background: transparent !important; 
+  background-image: none !important;
+}
 .menu-list-container ul li a {
   color: var(--text-primary) !important;
 }
