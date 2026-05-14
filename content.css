@@ -611,38 +611,35 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
 }
 
 /* Professional Ace Editor Dark Theme (Native CSS) */
-#editor, .ace_editor {
-  background-color: #18181b !important; /* Matches --bg-main */
-  color: #e4e4e7 !important;            /* Matches --text-primary */
-  border: 1px solid #3f3f46 !important;
+#editor, .ace_editor, .ace_gutter, .ace_scroller, .ace_content, .ace_text-layer {
+  background-color: #18181b !important; /* Matches --bg-main exactly */
+  color: #e4e4e7 !important;            /* Matches --text-primary exactly */
+  font-family: Consolas, 'Courier New', Courier, monospace !important;
+  font-size: 14px !important;
   filter: none !important;
 }
 
 .ace_gutter {
-  background-color: #27272a !important; /* Matches --bg-surface-1 */
-  color: #71717a !important;            /* Matches --text-muted */
+  background-color: #18181b !important; /* No more split color */
+  color: #52525b !important;
   border-right: 1px solid #3f3f46 !important;
-  filter: none !important;
 }
 
-.ace_scroller, .ace_content {
+.ace_gutter-cell {
   background-color: transparent !important;
-  filter: none !important;
 }
 
-/* Syntax Highlighting Restored */
-.ace_keyword, .ace_meta.ace_tag { color: #ff7b72 !important; }
-.ace_string { color: #a5d6ff !important; }
-.ace_comment { color: #8b949e !important; }
-.ace_numeric { color: #d2a8ff !important; }
-.ace_function, .ace_identifier { color: #d2a8ff !important; }
-.ace_operator { color: #79c0ff !important; }
-.ace_constant.ace_language { color: #ffab70 !important; }
-.ace_keyword.ace_operator { color: #ff7b72 !important; }
+/* Syntax Highlighting - High Contrast & Consistent */
+.ace_keyword, .ace_meta.ace_tag { color: #f87171 !important; }
+.ace_string { color: #60a5fa !important; }
+.ace_comment { color: #71717a !important; }
+.ace_numeric { color: #c084fc !important; }
+.ace_function, .ace_identifier { color: #e4e4e7 !important; }
+.ace_operator { color: #94a3b8 !important; }
 
-/* Ensure children don't inherit weird filters */
-.ace_editor * {
-  filter: none !important;
+/* Kill any persistent white backgrounds in layers */
+.ace_layer, .ace_print-margin-layer, .ace_marker-layer {
+  background: transparent !important;
 }
 
 /* Fix visibility for Ace Editor cursor and selection */
