@@ -11,7 +11,7 @@
   --bg-main: #18181b;         
   --bg-surface-1: #27272a;    
   --bg-surface-2: #3f3f46;    
-  --bg-surface-hover: #3f3f46;
+  --bg-surface-hover: #323235;    /* Subtler hover */
   --bg-surface-alt: rgba(255, 255, 255, 0.03);
   
   --border-color: #3f3f46;
@@ -488,6 +488,27 @@ input.search, .search-box input, input[type="text"], input[type="password"], tex
 input.search:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
   border-color: var(--accent-color) !important;
   outline: none !important;
+}
+
+/* Header Search Alignment Fix */
+.search-box {
+  margin-top: 10px !important;
+}
+.search-box form {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+.search-box input[type="submit"] {
+  height: 28px !important;
+  padding: 0 10px !important;
+  margin-top: 0 !important;
+  vertical-align: middle !important;
+}
+
+/* Neutralize any bright white hover states */
+tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover {
+  background-color: var(--bg-surface-hover) !important;
 }
 
 /* ==========================================================================
