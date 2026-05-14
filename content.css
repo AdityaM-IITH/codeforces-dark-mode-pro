@@ -496,10 +496,14 @@ input.search, .search-box input, input[type="text"], input[type="password"], tex
   border-radius: 6px !important;
 }
 
-/* If magnifier is a background image on the input */
-input.search[style*="background-image"], .search-box input[style*="background-image"] {
-  filter: invert(0.9) hue-rotate(180deg) !important;
+/* If magnifier is a background image on the input, replace with clean white SVG */
+input.search, .search-box input[type="text"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 8px center !important;
+  padding-left: 28px !important;
 }
+
 
 input.search:focus, input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
   border-color: var(--accent-color) !important;
