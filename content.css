@@ -610,12 +610,16 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
   border-bottom: 1px solid var(--border-color) !important;
 }
 
-/* Invert the actual writing area (iframe/contenteditable/Ace Editor) */
-.message-area iframe, .message-area .tox-edit-area__iframe, .message-area .mce-edit-area,
-.ace_editor, .ace_content, .ace_gutter {
+/* Universal Ace Editor inversion fix for all themes */
+.ace_editor, .ace_editor *, .ace_gutter, .ace_content, .ace_text-layer {
   filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
-  background: #fff !important; /* Base for inversion */
 }
+
+/* Base background for inversion to work correctly */
+.ace_editor, .ace_gutter {
+  background-color: #fff !important; 
+}
+
 
 /* Ensure the Ace Editor cursor and selection are visible after inversion */
 .ace_cursor {
