@@ -208,25 +208,28 @@ a:hover, a:active {
   color: #cbd5e1 !important;
 }
 
-/* Fix for Activity Heatmaps (Native and CF-Analytics) */
-rect[fill="#ffffff"], rect[fill="white"], .heatmap-rect-empty,
-rect.day[fill="#ebedf0"], rect.day[fill="white"], rect.day[fill="#ffffff"],
-rect[fill="#eee"], rect[fill="#eeeeee"], rect[fill^="#f"], rect[style*="fill: #fff"], rect[style*="fill:#fff"] {
-  fill: var(--bg-main) !important; /* Darker than surface for an 'empty' look */
+/* Universal White-Fill Killer (Aggressive) */
+[fill="#ffffff"], [fill="white"], [fill="#fff"], [fill="#FFF"], 
+[style*="fill: #ffffff"], [style*="fill: white"], [style*="fill: #fff"],
+[style*="fill:#ffffff"], [style*="fill:white"], [style*="fill:#fff"],
+[style*="fill: rgb(255, 255, 255)"], [style*="fill:rgb(255,255,255)"],
+rect[fill^="#f"], rect[fill^="#F"], rect[fill="#ebedf0"] {
+  fill: var(--bg-main) !important;
   stroke: var(--border-color) !important;
-  stroke-opacity: 0.1 !important;
+  stroke-opacity: 0.2 !important;
 }
 
-
 /* Aggressively tone down the overall brightness of heatmaps and charts */
-#heatmap, .analytics-heatmap, .user-activity-heatmap, .rating-chart, #placeholder, .dashboard-activity-heatmap {
-  filter: brightness(0.6) contrast(1.1) !important;
+#heatmap, .analytics-heatmap, .user-activity-heatmap, .rating-chart, #placeholder, 
+.dashboard-activity-heatmap, .heatmap-canvas, svg[class*="heatmap"] {
+  filter: brightness(0.55) contrast(1.1) !important;
   transition: filter 0.3s ease !important;
 }
 
-#heatmap:hover, .analytics-heatmap:hover, .user-activity-heatmap:hover, .rating-chart:hover {
+#heatmap:hover, .analytics-heatmap:hover, .user-activity-heatmap:hover, .rating-chart:hover, .heatmap-canvas:hover {
   filter: brightness(0.8) contrast(1.1) !important;
 }
+
 
 
 
