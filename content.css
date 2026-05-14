@@ -211,14 +211,20 @@ a:hover, a:active {
 /* Fix for Activity Heatmaps (Native and CF-Analytics) */
 rect[fill="#ffffff"], rect[fill="white"], .heatmap-rect-empty,
 rect.day[fill="#ebedf0"], rect.day[fill="white"], rect.day[fill="#ffffff"],
-rect[fill="#eee"], rect[fill="#eeeeee"] {
+rect[fill="#eee"], rect[fill="#eeeeee"], rect[fill^="#f"], rect[style*="fill: #fff"], rect[style*="fill:#fff"] {
   fill: var(--bg-surface-1) !important;
 }
 
-/* Tone down the overall brightness of heatmaps and charts */
-#heatmap, .analytics-heatmap, .user-activity-heatmap, .rating-chart, #placeholder {
+/* Aggressively tone down the overall brightness of heatmaps and charts */
+#heatmap, .analytics-heatmap, .user-activity-heatmap, .rating-chart, #placeholder, .dashboard-activity-heatmap {
+  filter: brightness(0.6) contrast(1.1) !important;
+  transition: filter 0.3s ease !important;
+}
+
+#heatmap:hover, .analytics-heatmap:hover, .user-activity-heatmap:hover, .rating-chart:hover {
   filter: brightness(0.8) contrast(1.1) !important;
 }
+
 
 
 
