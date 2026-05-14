@@ -329,19 +329,27 @@ rect[fill="#eee"], rect[fill="#eeeeee"], rect[fill^="#f"], rect[style*="fill: #f
   border-right: none !important;
   border-left: none !important;
 }
-.datatable tr:nth-child(even) td, .standings tr:nth-child(even) td, .datatable tr.dark td,
-[style*="background-color: #EAF4FF"], [style*="background-color: #eaf4ff"],
-[style*="background: #EAF4FF"], [style*="background: #eaf4ff"] {
-  background: var(--bg-surface-alt) !important;
-}
-
+.datatable tr, .standings tr, .rtable tr, .problems tr,
 .datatable td, .standings td, .rtable td, .problems td {
   border-bottom: 1px solid var(--border-color) !important;
   border-right: none !important; 
   border-left: none !important;
+  background-color: transparent !important;
   background: transparent !important;
   color: var(--text-primary) !important;
 }
+
+
+.datatable tr:nth-child(even), .standings tr:nth-child(even), .datatable tr.dark,
+.datatable tr:nth-child(even) td, .standings tr:nth-child(even) td, .datatable tr.dark td {
+  background-color: var(--bg-surface-alt) !important;
+}
+
+/* Catch-all for any stubborn light backgrounds in tables */
+.datatable [style*="background"], .standings [style*="background"], .rtable [style*="background"] {
+  background-color: transparent !important;
+}
+
 .datatable tr:hover td, .standings tr:hover td {
   background: var(--bg-surface-hover) !important;
 }
