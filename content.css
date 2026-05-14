@@ -610,9 +610,16 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
   border-bottom: 1px solid var(--border-color) !important;
 }
 
+/* Invert the actual writing area (iframe/contenteditable) */
+.message-area iframe, .message-area .tox-edit-area__iframe, .message-area .mce-edit-area {
+  filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
+  background: #fff !important; /* Base for inversion */
+}
+
 .message-area .toolbar img, .message-area .editor-toolbar img {
   filter: invert(1) brightness(1.5) !important;
 }
+
 
 
 .pagination a:hover { 
