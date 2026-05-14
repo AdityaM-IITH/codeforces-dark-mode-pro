@@ -8,8 +8,9 @@
 
 const fixDynamicStyles = () => {
     // Fix blog titles that Codeforces forces to black via JS
-    const blogTitles = document.querySelectorAll('h3 a[href^="/blog/"], h2 a[href^="/blog/"], .title a[href^="/blog/"]');
+    const blogTitles = document.querySelectorAll('h3 a[href^="/blog/"], h2 a[href^="/blog/"], .title a[href^="/blog/"], #pageContent div div h3 a');
     blogTitles.forEach(el => {
+        // Only override if it actually has an inline color style or matches our selector
         el.style.setProperty('color', 'var(--text-heading)', 'important');
     });
 
@@ -23,31 +24,46 @@ const fixDynamicStyles = () => {
     });
 };
 
-// Initial run
-fixDynamicStyles();
-
-// Observe for dynamic changes (AJAX, Codeforces scripts)
-const observer = new MutationObserver((mutations) => {
-    let shouldFix = false;
-    for (const mutation of mutations) {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            shouldFix = true;
-            break;
-        }
-        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-            shouldFix = true;
-            break;
-        }
+// Initialize observer safely
+const init = () => {
+    // Ensure we have a target to observe
+    const target = document.documentElement;
+    if (!target) {
+        window.setTimeout(init, 10);
+        return;
     }
-    if (shouldFix) fixDynamicStyles();
-});
 
-observer.observe(document.body, { 
-    childList: true, 
-    subtree: true, 
-    attributes: true, 
-    attributeFilter: ['style'] 
-});
+    const observer = new MutationObserver((mutations) => {
+        let shouldFix = false;
+        for (const mutation of mutations) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                shouldFix = true;
+                break;
+            }
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                shouldFix = true;
+                break;
+            }
+        }
+        if (shouldFix) fixDynamicStyles();
+    });
 
+    observer.observe(target, { 
+        childList: true, 
+        subtree: true, 
+        attributes: true, 
+        attributeFilter: ['style'] 
+    });
+
+    // Initial fix
+    fixDynamicStyles();
+    
+    // Also run on DOMContentLoaded just to be sure
+    document.addEventListener('DOMContentLoaded', fixDynamicStyles);
+};
+
+init();
+
+// Set theme attribute immediately
 document.documentElement.setAttribute('data-theme', 'dark');
 
