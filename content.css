@@ -614,10 +614,16 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
 #editor, .ace_editor, .ace_gutter, .ace_scroller, .ace_content, .ace_text-layer,
 [id^="ace_"], [class^="ace_"] {
   background-color: #ffffff !important;
-  filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.1) !important;
+  filter: invert(1) hue-rotate(180deg) brightness(1.6) contrast(1.2) !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
+.ace_gutter-cell {
+  color: #000 !important; /* Will be white after inversion */
+  font-weight: bold !important;
+}
+
 
 
 /* Prevent double-inversion on tokens */
