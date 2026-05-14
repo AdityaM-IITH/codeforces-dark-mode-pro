@@ -329,15 +329,18 @@ rect[fill="#eee"], rect[fill="#eeeeee"], rect[fill^="#f"], rect[style*="fill: #f
   border-right: none !important;
   border-left: none !important;
 }
-.datatable td, .standings td, .rtable td {
+.datatable tr:nth-child(even) td, .standings tr:nth-child(even) td, .datatable tr.dark td,
+[style*="background-color: #EAF4FF"], [style*="background-color: #eaf4ff"],
+[style*="background: #EAF4FF"], [style*="background: #eaf4ff"] {
+  background: var(--bg-surface-alt) !important;
+}
+
+.datatable td, .standings td, .rtable td, .problems td {
   border-bottom: 1px solid var(--border-color) !important;
   border-right: none !important; 
   border-left: none !important;
   background: transparent !important;
   color: var(--text-primary) !important;
-}
-.datatable tr:nth-child(even) td, .standings tr:nth-child(even) td, .datatable tr.dark td {
-  background: var(--bg-surface-alt) !important;
 }
 .datatable tr:hover td, .standings tr:hover td {
   background: var(--bg-surface-hover) !important;
