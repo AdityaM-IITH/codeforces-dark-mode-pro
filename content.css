@@ -210,9 +210,16 @@ a:hover, a:active {
 
 /* Fix for Activity Heatmaps (Native and CF-Analytics) */
 rect[fill="#ffffff"], rect[fill="white"], .heatmap-rect-empty,
-rect.day[fill="#ebedf0"], rect.day[fill="white"], rect.day[fill="#ffffff"] {
+rect.day[fill="#ebedf0"], rect.day[fill="white"], rect.day[fill="#ffffff"],
+rect[fill="#eee"], rect[fill="#eeeeee"] {
   fill: var(--bg-surface-1) !important;
 }
+
+/* Tone down the overall brightness of heatmaps and charts */
+#heatmap, .analytics-heatmap, .user-activity-heatmap, .rating-chart, #placeholder {
+  filter: brightness(0.8) contrast(1.1) !important;
+}
+
 
 
 .roundbox .titled, .roundbox .caption {
