@@ -73,7 +73,11 @@ div, span, table, tbody, thead, tr, th, td, pre, fieldset, form {
   color: #0f172a !important;
 }
 
-.notice, .ttypography .notice, .alert, .info, .success, .warning, .error {
+.notice, .ttypography .notice, .alert, .info, .success, .warning, .error, 
+.comment-table.highlight-blue, .comment-table.highlight, .comment-table.new-comment,
+[style*="background-color: #EAF4FF"], [style*="background-color: #f8f8f8"], 
+[style*="background-color: #ffffcc"], [style*="background-color: #fff9e6"],
+[style*="background-color: #fcf8e3"] {
   background: var(--bg-surface-1) !important;
   background-color: var(--bg-surface-1) !important;
   border-color: var(--border-color) !important;
@@ -180,6 +184,30 @@ a:hover, a:active {
   border: 1px solid var(--border-color) !important;
   border-radius: 8px !important;
 }
+
+/* Fix for the 'Attention' box (highlight-blue) */
+.roundbox.highlight-blue {
+  background-color: #1e293b !important; /* Deep navy */
+  border-color: #334155 !important;
+}
+
+.roundbox.highlight-blue .caption.titled {
+  background: #334155 !important;
+  color: #f8fafc !important;
+}
+
+.roundbox.highlight-blue div, 
+.roundbox.highlight-blue p, 
+.roundbox.highlight-blue span {
+  color: #cbd5e1 !important;
+}
+
+/* Fix for Activity Heatmaps (Native and CF-Analytics) */
+rect[fill="#ffffff"], rect[fill="white"], .heatmap-rect-empty,
+rect.day[fill="#ebedf0"], rect.day[fill="white"], rect.day[fill="#ffffff"] {
+  fill: var(--bg-surface-1) !important;
+}
+
 
 .roundbox .titled, .roundbox .caption {
   background: var(--bg-surface-2) !important;
