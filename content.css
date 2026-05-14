@@ -311,7 +311,8 @@ rect[fill="#ebedf0"], rect[fill="#eeeeee"], rect[fill="#e6e6e6"], .heatmap-rect-
   transition: all 0.15s ease !important;
 }
 
-.second-level-menu-list li.current a, .nav-links li.current a {
+.second-level-menu-list li.current a, .nav-links li.current a,
+.second-level-menu-list li.current {
   background: var(--bg-surface-2) !important;
   color: var(--text-heading) !important;
   border-bottom: 2px solid var(--accent-color) !important;
@@ -561,7 +562,26 @@ a.user-admin, .user-admin, a.user-black, .user-black, a.user-tourist, .user-tour
   color: #ffffff !important;
 }
 
+/* Custom Test / Custom Invocation Page Fixes */
+.custom-test-area, .custom-test textarea, .custom-test select,
+#sourceCodeTextarea, #inputTextArea, #outputTextArea {
+  background: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+}
+
+.custom-test .label {
+  color: var(--text-heading) !important;
+}
+
+#customTestForm .file-input-button, #customTestForm .run-button {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-primary) !important;
+}
+
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--bg-surface-hover); }
+
