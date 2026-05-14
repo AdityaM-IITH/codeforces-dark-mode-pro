@@ -304,6 +304,15 @@ rect[fill="#ebedf0"], rect[fill="#eeeeee"], rect[fill="#e6e6e6"], .heatmap-rect-
   border: none !important;
 }
 
+.second-level-menu-list li *, .nav-links li * {
+  background-image: none !important;
+}
+
+.second-level-menu-list li div, .nav-links li div {
+  display: none !important;
+}
+
+
 .second-level-menu-list li a, .nav-links li a {
   background: transparent !important;
   color: var(--text-primary) !important;
