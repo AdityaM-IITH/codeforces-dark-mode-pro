@@ -647,9 +647,11 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
   border-left: 2px solid #ffffff !important;
 }
 
-.ace_editor .ace_marker-layer .ace_active-line {
+.ace_editor .ace_marker-layer .ace_active-line,
+.ace_editor .ace_gutter-active-line {
   background: rgba(255, 255, 255, 0.05) !important;
 }
+
 
 .ace_editor .ace_selection {
   background: rgba(59, 130, 246, 0.3) !important;
