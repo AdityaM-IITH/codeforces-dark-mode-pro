@@ -143,6 +143,12 @@ p, ul, ol, li, dl, dt, dd, blockquote, center, div {
   color: var(--text-primary) !important;
 }
 
+/* Fix for Heatmap Text (Native and Extensions) */
+svg text, text, .tickLabel {
+  fill: var(--text-primary) !important;
+  color: var(--text-primary) !important;
+}
+
 
 b, strong {
   color: var(--text-heading) !important;
