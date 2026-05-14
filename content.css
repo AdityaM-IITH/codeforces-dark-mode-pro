@@ -626,11 +626,11 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
 
 
 
-/* Prevent double-inversion on tokens */
+/* Prevent double-inversion on tokens while allowing parent inversion to pass through */
 .ace_editor * {
-  filter: none !important;
   background-color: transparent !important;
 }
+
 
 /* Fix visibility for Ace Editor cursor and selection */
 .ace_editor .ace_cursor {
