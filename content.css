@@ -579,19 +579,32 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
 }
 
 
-/* Message Editor Fixes */
-.talk-content, .message-area, .history-container {
+/* Message Modal & Editor Deep Fix */
+#facebox .history, #facebox .history-container, #facebox .history-item,
+#facebox .message-area, #facebox .message-area textarea,
+#facebox .talk-content, #facebox .talk-content-textarea {
   background: var(--bg-main) !important;
+  background-color: var(--bg-main) !important;
   color: var(--text-primary) !important;
 }
 
-.talk-content * {
+#facebox .history-item *, #facebox .talk-content * {
   color: var(--text-primary) !important;
+  background: transparent !important;
 }
 
-.history-item {
+/* Fix for the white toolbar above message editor */
+.message-area [style*="background-color: white"], 
+.message-area [style*="background-color: #fff"],
+.message-area .toolbar, .message-area .editor-toolbar {
+  background: var(--bg-surface-2) !important;
   border-bottom: 1px solid var(--border-color) !important;
 }
+
+.message-area .toolbar img, .message-area .editor-toolbar img {
+  filter: invert(1) brightness(1.5) !important;
+}
+
 
 .pagination a:hover { 
   background: var(--bg-surface-hover) !important; 
