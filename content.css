@@ -83,6 +83,15 @@ div, span, table, tbody, thead, tr, th, td, pre, fieldset, form {
   border-color: var(--border-color) !important;
 }
 
+/* Kill legacy rounded corner sprite pieces (white boxes in corners) */
+.lt, .rt, .lb, .rb, .ilt, .irt, .ilb, .irb, 
+.roundbox .lt, .roundbox .rt, .roundbox .lb, .roundbox .rb {
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+
 /* ==========================================================================
    SMART IMAGE INVERSION & FLAWLESS LOGO BLENDING
    ========================================================================== */
