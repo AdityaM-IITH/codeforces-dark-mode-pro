@@ -610,36 +610,54 @@ tr:hover td, li:hover, .menu-list-container ul li a:hover, .nav-links li a:hover
   border-bottom: 1px solid var(--border-color) !important;
 }
 
-/* Nuclear Ace Editor dark mode fix */
-#editor, .ace_editor, .ace_gutter, .ace_scroller, .ace_content, .ace_text-layer,
-[id^="ace_"], [class^="ace_"] {
-  background-color: #ffffff !important;
-  filter: invert(1) hue-rotate(180deg) brightness(1.6) contrast(1.2) !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
+/* Professional Ace Editor Dark Theme (Native CSS) */
+#editor, .ace_editor {
+  background-color: #18181b !important; /* Matches --bg-main */
+  color: #e4e4e7 !important;            /* Matches --text-primary */
+  border: 1px solid #3f3f46 !important;
+  filter: none !important;
 }
 
-.ace_gutter-cell {
-  color: #000 !important; /* Will be white after inversion */
-  font-weight: bold !important;
+.ace_gutter {
+  background-color: #27272a !important; /* Matches --bg-surface-1 */
+  color: #71717a !important;            /* Matches --text-muted */
+  border-right: 1px solid #3f3f46 !important;
+  filter: none !important;
 }
 
-
-
-/* Prevent double-inversion on tokens while allowing parent inversion to pass through */
-.ace_editor * {
+.ace_scroller, .ace_content {
   background-color: transparent !important;
+  filter: none !important;
 }
 
+/* Syntax Highlighting Restored */
+.ace_keyword, .ace_meta.ace_tag { color: #ff7b72 !important; }
+.ace_string { color: #a5d6ff !important; }
+.ace_comment { color: #8b949e !important; }
+.ace_numeric { color: #d2a8ff !important; }
+.ace_function, .ace_identifier { color: #d2a8ff !important; }
+.ace_operator { color: #79c0ff !important; }
+.ace_constant.ace_language { color: #ffab70 !important; }
+.ace_keyword.ace_operator { color: #ff7b72 !important; }
+
+/* Ensure children don't inherit weird filters */
+.ace_editor * {
+  filter: none !important;
+}
 
 /* Fix visibility for Ace Editor cursor and selection */
 .ace_editor .ace_cursor {
-  border-left: 2px solid #000 !important;
+  border-left: 2px solid #ffffff !important;
+}
+
+.ace_editor .ace_marker-layer .ace_active-line {
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .ace_editor .ace_selection {
-  background: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(59, 130, 246, 0.3) !important;
 }
+
 
 /* Reinforce Custom Test area inputs and labels */
 .custom-test-area input, .custom-test-area select, .custom-test-area textarea,
