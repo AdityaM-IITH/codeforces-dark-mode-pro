@@ -212,8 +212,11 @@ a:hover, a:active {
 rect[fill="#ffffff"], rect[fill="white"], .heatmap-rect-empty,
 rect.day[fill="#ebedf0"], rect.day[fill="white"], rect.day[fill="#ffffff"],
 rect[fill="#eee"], rect[fill="#eeeeee"], rect[fill^="#f"], rect[style*="fill: #fff"], rect[style*="fill:#fff"] {
-  fill: var(--bg-surface-1) !important;
+  fill: var(--bg-main) !important; /* Darker than surface for an 'empty' look */
+  stroke: var(--border-color) !important;
+  stroke-opacity: 0.1 !important;
 }
+
 
 /* Aggressively tone down the overall brightness of heatmaps and charts */
 #heatmap, .analytics-heatmap, .user-activity-heatmap, .rating-chart, #placeholder, .dashboard-activity-heatmap {
