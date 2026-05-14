@@ -507,7 +507,7 @@ a.user-admin, a.user-admin:link, a.user-admin:visited, .user-admin { color: var(
 a.user-black, a.user-black:link, a.user-black:visited, .user-black { color: var(--rating-unrated) !important; }
 
 .user-legendary::first-letter, .legendary-user-first-letter, a.user-legendary::first-letter, a.user-legendary:visited::first-letter { color: #ffffff !important; }
-.user-tourist::first-letter, .tourist-user-first-letter, a.user-tourist::first-letter, a.user-tourist:visited::first-letter { color: var(--rating-lgm) !important; }
+.user-tourist::first-letter, .tourist-user-first-letter, a.user-tourist::first-letter, a.user-tourist:visited::first-letter { color: #000000 !important; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
