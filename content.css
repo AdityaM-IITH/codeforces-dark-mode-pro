@@ -502,12 +502,18 @@ a.user-violet, a.user-violet:link, a.user-violet:visited, .user-violet { color: 
 a.user-orange, a.user-orange:link, a.user-orange:visited, .user-orange { color: var(--rating-master) !important; }
 a.user-red, a.user-red:link, a.user-red:visited, .user-red { color: var(--rating-gm) !important; }
 a.user-legendary, a.user-legendary:link, a.user-legendary:visited, .user-legendary { color: var(--rating-lgm) !important; }
-a.user-tourist, a.user-tourist:link, a.user-tourist:visited, .user-tourist { color: #ffffff !important; }
-a.user-admin, a.user-admin:link, a.user-admin:visited, .user-admin { color: var(--rating-unrated) !important; }
-a.user-black, a.user-black:link, a.user-black:visited, .user-black { color: var(--rating-unrated) !important; }
+a.user-admin, .user-admin, a.user-black, .user-black, a.user-tourist, .user-tourist, .user-unrated, a.user-unrated { 
+  color: #ffffff !important; 
+}
 
+/* Specific styling for the 'Tourist' tier (4000+) */
 .user-legendary::first-letter, .legendary-user-first-letter, a.user-legendary::first-letter, a.user-legendary:visited::first-letter { color: #ffffff !important; }
 .user-tourist::first-letter, .tourist-user-first-letter, a.user-tourist::first-letter, a.user-tourist:visited::first-letter { color: #000000 !important; }
+
+/* Aggressive fix for any remaining black text in info sections */
+[style*="color: black"], [style*="color: #000"], [style*="color: #000000"], .main-info span[style*="color: black"] {
+  color: #ffffff !important;
+}
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
