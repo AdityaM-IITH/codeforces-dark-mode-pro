@@ -317,42 +317,35 @@ rect[fill="#eee"], rect[fill="#eeeeee"], rect[fill^="#f"], rect[style*="fill: #f
 /* ==========================================================================
    TABLES
    ========================================================================== */
-.datatable, .standings, .rtable {
-  background: var(--bg-surface-1) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-}
-.datatable th, .standings th, .rtable th {
-  background: var(--bg-surface-2) !important;
-  color: var(--text-primary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
-  border-right: none !important;
-  border-left: none !important;
-}
-.datatable tr, .standings tr, .rtable tr, .problems tr,
-.datatable td, .standings td, .rtable td, .problems td {
-  border-bottom: 1px solid var(--border-color) !important;
-  border-right: none !important; 
-  border-left: none !important;
+/* Aggressive Table Neutralization for Groups/Contests/Archive */
+#pageContent table, #pageContent tr, #pageContent td, #pageContent th,
+.datatable, .datatable tr, .datatable td, .rtable, .rtable tr, .rtable td, 
+.standings, .standings tr, .standings td {
   background-color: transparent !important;
   background: transparent !important;
-  color: var(--text-primary) !important;
 }
 
-
-.datatable tr:nth-child(even), .standings tr:nth-child(even), .datatable tr.dark,
-.datatable tr:nth-child(even) td, .standings tr:nth-child(even) td, .datatable tr.dark td {
+/* Re-apply subtle alternating rows at a broad level */
+#pageContent tr:nth-child(even), .datatable tr:nth-child(even), .rtable tr:nth-child(even),
+#pageContent tr.dark, .datatable tr.dark, .rtable tr.dark {
   background-color: var(--bg-surface-alt) !important;
 }
 
-/* Catch-all for any stubborn light backgrounds in tables */
-.datatable [style*="background"], .standings [style*="background"], .rtable [style*="background"] {
-  background-color: transparent !important;
+#pageContent tr:hover td, .datatable tr:hover td, .rtable tr:hover td {
+  background-color: var(--bg-surface-hover) !important;
 }
 
-.datatable tr:hover td, .standings tr:hover td {
-  background: var(--bg-surface-hover) !important;
+.datatable th, .standings th, .rtable th, #pageContent th {
+  background: var(--bg-surface-2) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
+
+.datatable td, .standings td, .rtable td, .problems td, #pageContent td {
+  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
 
 .accepted-special, .party-accepted, .cell-accepted {
   background: var(--bg-success) !important;
